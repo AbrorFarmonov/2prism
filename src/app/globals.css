@@ -2,9 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #fff;
+}
+
+.custom-container {
+  max-width: 90%;
+  margin: 0px auto;
+}
+
+.entry {
+  background-image: url('../assets/bg-entry.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 0px 0px 35px 35px;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-container {
+    max-width: 650px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .custom-container {
+    max-width: 950px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .custom-container {
+    max-width: 1370px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .custom-container {
+    max-width: 1440px;
   }
 }

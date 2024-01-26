@@ -1,10 +1,13 @@
-import { FiActivity } from "react-icons/fi";
+import Entry from "@/components/entry";
+import MoreInfo from "@/components/moreInfo";
 
 export default function Home() {
   return (
-    <div className="bg-red-900 min-h-screen flex justify-center items-center">
-      <FiActivity size={50} color="white" className="animate-bounce"/>
-
-    </div>
+    <>
+      <Entry />
+      <div className="custom-container">
+        <MoreInfo />
+      </div>
+    </>
   );
 }
