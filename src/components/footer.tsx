@@ -54,7 +54,7 @@ export default function Footer() {
                     <form action='#' className='flex justify-start gap-[20px] items-center mt-[20px]'>
                         <div className='flex gap-[16px] bg-white items-center pl-[20px] rounded-3xl'>
                             <CiMail size={24} color='#FFA800' />
-                            <input type="email" name="email" placeholder='Your Email' className='placeholder:text-[#5B5B5B] bg-transparent max-w-[270px] py-[16px] outline-none text-[#5243C2]' />
+                            <input type="email" name="email" placeholder='Your Email' className='placeholder:text-[#5B5B5B] bg-transparent w-[100px] py-[16px] outline-none text-[#5243C2] pr-[100px]' />
                         </div>
                         <input type="submit" value='Send' className='flex justify-center items-center gap-[5px] bg-[#F6F4FF] p-[10px] rounded-[12px] text-[14px] md:text-[16px] text-[#5243C2]' />
                     </form>
