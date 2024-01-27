@@ -12,15 +12,16 @@ import Sidebar from './sidebar';
 
 export default function Entry() {
     const [action, setAction] = useState(true)
+
     return (
         <section className="entry  text-white min-h-svh">
             <Sidebar action={action} setAction={setAction} />
             <div className="custom-container flex justify-between flex-col ">
                 <div className='flex justify-between items-center h-[10vh]'>
-                    <a href="/">
+                    <a href="/" className='w-[20%]'>
                         <Image src={logo} alt='logo of company' />
                     </a>
-                    <nav className='hidden lg:flex items-center gap-[40px]'>
+                    <nav className='hidden lg:flex items-center gap-[40px] justify-end w-[80%]'>
                         <a className='text-inherit text-[14px]' href="#">Home</a>
                         <a className='text-inherit text-[14px] opacity-[0.7]' href="#hotels">Hotels</a>
                         <a className='text-inherit text-[14px] opacity-[0.7]' href="#restaurants">Restaurants</a>
@@ -29,10 +30,7 @@ export default function Entry() {
                         <a className='text-inherit text-[14px] opacity-[0.7]' href="#activities">Activities</a>
                         <a className='text-inherit text-[14px] opacity-[0.7]' href="#contact">Contact</a>
                     </nav>
-                    <div className="control-panel flex items-center gap-[10px]">
-                        <button>
-                            User
-                        </button>
+                    <div className="control-panel">
                         <button className='block lg:hidden' onClick={() => setAction(false)}>
                             <FaBars size={20} />
                         </button>

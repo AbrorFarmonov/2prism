@@ -3,7 +3,6 @@ import { IoCloseSharp } from "react-icons/io5";
 
 
 export default function Sidebar({ action, setAction }: any) {
-    console.log(action)
     return (
         <div className={action ? 'fixed top-0 w-full min-h-screen overflow-y-hidden backdrop-blur-3xl z-50 right-[-100%] transition-all duration-500 rounded-[250px]' : 'fixed top-0 w-full min-h-screen overflow-y-hidden backdrop-blur-3xl z-50 right-[0] transition-all duration-500 rounded-0'}>
             <button className="absolute top-[20px] right-[20px]" onClick={() => setAction(!action)}>
