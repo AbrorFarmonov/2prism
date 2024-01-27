@@ -130,7 +130,7 @@ export default function MoreInfo() {
     ]
     return (
         <>
-            <div>
+            <div id='destinations'>
                 <h1 className='text-[#161414] text-[25px] lg:text-[32px] font-[600] pt-[40px] lg:pt-[80px] pb-[40px] lg:pb-[60px]'>Popular Destinations</h1>
                 <div className="content-container grid grid-cols-1 md:grid-cols-2 gap-x-[20px] gap-y-[30px] lg:grid-cols-4">
                     {
@@ -146,8 +146,8 @@ export default function MoreInfo() {
                     }
                 </div>
             </div>
-            <div>
-                <div className="starter flex justify-between items-center">
+            <div id='hotels'>
+                <div className="starter flex justify-between items-center" id='restaurants'>
                     <h1 className='text-[#161414] text-[20px] lg:text-[32px] font-[600] pt-[40px] lg:pt-[80px] pb-[40px] lg:pb-[60px]'>Hotels and Restaurants</h1>
                     <Link href={'/'} className='flex justify-center items-center gap-[5px] bg-[#F6F4FF] p-[10px] rounded-[12px]'>
                         <span className='text-[13px] md:text-[16px] text-[#5243C2]'>View all</span>
@@ -174,7 +174,7 @@ export default function MoreInfo() {
                     }
                 </div>
             </div>
-            <div className="travel-section">
+            <div className="travel-section" id='tours'>
                 <div className="starter flex justify-between items-center">
                     <h1 className='text-[#161414] text-[20px] lg:text-[32px] font-[600] pt-[40px] lg:pt-[80px] pb-[40px] lg:pb-[60px]'>Travel Tips and Advice</h1>
                     <Link href={'/'} className='flex justify-center items-center gap-[5px] bg-[#F6F4FF] p-[10px] rounded-[12px]'>
@@ -214,7 +214,7 @@ export default function MoreInfo() {
                     }
                 </div>
             </div>
-            <div className='activities-section'>
+            <div className='activities-section' id='activities'>
                 <div className="starter flex justify-between items-center">
                     <h1 className='text-[#161414] text-[20px] lg:text-[32px] font-[600] pt-[40px] lg:pt-[80px] pb-[40px] lg:pb-[60px]'>Travel Tips and Advice</h1>
                     <Link href={'/'} className='flex justify-center items-center gap-[5px] bg-[#F6F4FF] p-[10px] rounded-[12px]'>
