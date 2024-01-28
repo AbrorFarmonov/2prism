@@ -8,6 +8,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { IoMdBicycle } from "react-icons/io";
 import { useState } from 'react';
 import Sidebar from './sidebar';
+import { MotionDiv, fromLeft, fromRight, fromTop } from './animation';
 
 
 export default function Entry() {
@@ -17,7 +18,7 @@ export default function Entry() {
         <section className="entry  text-white min-h-svh">
             <Sidebar action={action} setAction={setAction} />
             <div className="custom-container flex justify-between flex-col ">
-                <div className='flex justify-between items-center h-[10vh]'>
+                <MotionDiv variants={fromTop} initial='initial' animate='animate' transition={{ ease: 'backOut', duration: 0.7 }} className='flex justify-between items-center h-[10vh]'>
                     <a href="/" className='w-[20%]'>
                         <Image src={logo} alt='logo of company' />
                     </a>
@@ -35,16 +36,16 @@ export default function Entry() {
                             <FaBars size={20} />
                         </button>
                     </div>
-                </div>
+                </MotionDiv>
                 <div className='h-[90vh] flex flex-col justify-evenly text-center'>
-                    <div>
+                    <MotionDiv variants={fromRight} initial='initial' whileInView='animate' viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.7, ease: 'backInOut' }}>
                         <h1 className='text-[30px] font-bold lg:text-[48px] text-balance'>Discover the most engaging places</h1>
                         <a href="#" className='flex justify-center items-center gap-[8px] bg-[#7B61FF] w-[260px] h-[50px] mx-auto rounded-[12px] mt-[20px] text-[16px] lg:text-[18px] font-bold'>
                             <TbWorld size={24} />
                             <span>Discover on 3D Globe</span>
                         </a>
-                    </div>
-                    <div className='bg-white text-black rounded-[12px] lg:flex justify-center items-center px-[20px]'>
+                    </MotionDiv>
+                    <MotionDiv variants={fromLeft} initial='initial' whileInView='animate' viewport={{ once: true }} transition={{ duration: 0.5, delay: 1.2, ease: 'backInOut' }} className='bg-white text-black rounded-[12px] lg:flex justify-center items-center px-[20px]'>
                         <div className="content-entry grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                             <div className='flex items-center gap-[10px] justify-start p-[16px]'>
                                 <FaLocationDot size={24} color='#FFA800' className='animate-bounce' />
@@ -78,7 +79,7 @@ export default function Entry() {
                         <button className='w-[60px] h-[60px] flex justify-center items-center mx-auto bg-[#7B61FF] rounded-[12px] mb-[10px] lg:mb-0'>
                             <HiMiniMagnifyingGlass size={24} color='white' className='animate-pulse' />
                         </button>
-                    </div>
+                    </MotionDiv>
                 </div>
             </div>
         </section>

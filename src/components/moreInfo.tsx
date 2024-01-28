@@ -27,6 +27,7 @@ import { FaLocationDot, FaRegComment } from "react-icons/fa6";
 import { FaLongArrowAltRight, FaRegCalendar, FaRegUser } from "react-icons/fa";
 
 import Link from 'next/link'
+import { MotionDiv, fromLeft, fromRight, fromTop } from './animation'
 
 
 
@@ -131,35 +132,35 @@ export default function MoreInfo() {
     return (
         <>
             <div id='destinations'>
-                <h1 className='text-[#161414] text-[25px] lg:text-[32px] font-[600] pt-[40px] lg:pt-[80px] pb-[40px] lg:pb-[60px]'>Popular Destinations</h1>
+                <MotionDiv variants={fromLeft} initial='initial' whileInView='animate' transition={{ duration: .7, ease: 'backInOut', delay: 0.6 }} className='text-[#161414] text-[25px] lg:text-[32px] font-[600] pt-[40px] lg:pt-[80px] pb-[40px] lg:pb-[60px]'>Popular Destinations</MotionDiv>
                 <div className="content-container grid grid-cols-1 md:grid-cols-2 gap-x-[20px] gap-y-[30px] lg:grid-cols-4">
                     {
                         pop_detailed.map((item, index) => (
-                            <div key={index} >
+                            <MotionDiv variants={fromRight} initial='initial' whileInView='animate' transition={{ delay: 0.4 * index, duration: 0.6, ease: 'backInOut' }} key={index} >
                                 <div className="image-container relative h-[270px] lg:h-[220px] xl:h-[350px]">
                                     <CustomImage item={item} />
                                 </div>
                                 <h2 className='text-[#161414] fpmt-[600] text-[16px] mt-[8px] leading-none'>{item.title}</h2>
                                 <span className='text-[#979797] text-[13px]'>{item.desc}</span>
-                            </div>
+                            </MotionDiv>
                         ))
                     }
                 </div>
             </div>
             <div id='hotels'>
-                <div className="starter flex justify-between items-center" id='restaurants'>
+                <MotionDiv variants={fromLeft} initial='initial' whileInView='animate' transition={{ duration: .7, ease: 'backInOut', delay: 0.6 }} className="starter flex justify-between items-center" id='restaurants'>
                     <h1 className='text-[#161414] text-[20px] lg:text-[32px] font-[600] pt-[40px] lg:pt-[80px] pb-[40px] lg:pb-[60px]'>Hotels and Restaurants</h1>
                     <Link href={'/'} className='flex justify-center items-center gap-[5px] bg-[#F6F4FF] p-[10px] rounded-[12px]'>
                         <span className='text-[13px] md:text-[16px] text-[#5243C2]'>View all</span>
                         <FaLongArrowAltRight color='#5243C2' />
                     </Link>
-                </div>
+                </MotionDiv>
                 <div className="hotels-container grid grid-cols-1 gap-y-[20px] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-[30px]">
                     {
                         hotelsData.map((item, index) => (
-                            <div key={index}>
+                            <MotionDiv variants={fromRight} initial='initial' whileInView='animate' transition={{ delay: 0.4 * index, ease: 'backInOut', duration: 0.4 }} key={index}>
                                 <div className="image-container relative h-[320px] lg:h-[320px]">
-                                    <CustomImage item={item} />
+                                    <CustomImage item={item} npm r />
                                 </div>
                                 <h2 className='text-[#161414] text-[16px] font-[500] mt-[10px] mb-[12px]'>{item.title}</h2>
                                 <div className="info flex justify-between items-center">
@@ -169,23 +170,23 @@ export default function MoreInfo() {
                                     </div>
                                     <ReactStars value={item.rate} edit={false} size={16} />
                                 </div>
-                            </div>
+                            </MotionDiv>
                         ))
                     }
                 </div>
             </div>
             <div className="travel-section" id='tours'>
-                <div className="starter flex justify-between items-center">
+                <MotionDiv variants={fromLeft} initial='initial' whileInView='animate' transition={{ duration: .7, ease: 'backInOut', delay: 0.6 }} className="starter flex justify-between items-center">
                     <h1 className='text-[#161414] text-[20px] lg:text-[32px] font-[600] pt-[40px] lg:pt-[80px] pb-[40px] lg:pb-[60px]'>Travel Tips and Advice</h1>
                     <Link href={'/'} className='flex justify-center items-center gap-[5px] bg-[#F6F4FF] p-[10px] rounded-[12px]'>
                         <span className='text-[13px] md:text-[16px] text-[#5243C2]'>View all</span>
                         <FaLongArrowAltRight color='#5243C2' />
                     </Link>
-                </div>
+                </MotionDiv>
                 <div className="travel-container flex justify-between flex-col xl:flex-row gap-[30px]">
                     {
                         travelData.map((item, index) => (
-                            <div key={index} className='flex flex-col justify-center md:flex-row gap-[15px] md:gap-[30px]'>
+                            <MotionDiv variants={fromRight} initial='initial' whileInView='animate' transition={{ delay: 0.4 * index, ease: 'backInOut', duration: 0.4 }} key={index} className='flex flex-col justify-center md:flex-row gap-[15px] md:gap-[30px]'>
                                 <div className="image-container relative h-[320px] lg:h-[320px] w-[100%] md:w-[47%] xl:h-[400px]">
                                     <CustomImage item={item} />
                                 </div>
@@ -209,28 +210,28 @@ export default function MoreInfo() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </MotionDiv>
                         ))
                     }
                 </div>
             </div>
             <div className='activities-section' id='activities'>
-                <div className="starter flex justify-between items-center">
+                <MotionDiv variants={fromLeft} initial='initial' whileInView='animate' transition={{ duration: .7, ease: 'backInOut', delay: 0.6 }} className="starter flex justify-between items-center">
                     <h1 className='text-[#161414] text-[20px] lg:text-[32px] font-[600] pt-[40px] lg:pt-[80px] pb-[40px] lg:pb-[60px]'>Travel Tips and Advice</h1>
                     <Link href={'/'} className='flex justify-center items-center gap-[5px] bg-[#F6F4FF] p-[10px] rounded-[12px]'>
                         <span className='text-[13px] md:text-[16px] text-[#5243C2]'>View all</span>
                         <FaLongArrowAltRight color='#5243C2' />
                     </Link>
-                </div>
+                </MotionDiv>
                 <div className="act-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-x-[32px] gap-y-[20px]">
                     {
                         activitiesData.map((item, index) => (
-                            <div key={index}>
+                            <MotionDiv variants={fromRight} initial='initial' whileInView='animate' transition={{ delay: 0.4 * index, ease: 'backInOut', duration: 0.4 }} key={index}>
                                 <div className="image-container relative h-[320px] lg:h-[270px] w-[100%] md:w-[100%] xl:h-[400px]">
                                     <CustomImage item={item} />
                                 </div>
                                 <h2 className='text-[#161414] text-[16px] font-[500] mt-[16px]'>{item.title}</h2>
-                            </div>
+                            </MotionDiv>
                         ))
                     }
                 </div>
